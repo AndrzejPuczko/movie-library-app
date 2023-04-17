@@ -22,14 +22,22 @@
 
       <div class="nav__mobile">
 
-        <a href="#home" class="nav__mobile-item">home</a>
-        <a href="#news" class="nav__mobile-item">nowości</a>
-        <a href="#contact" class="nav__mobile-item">kontakt</a>
+        <a href="#home" class="nav__mobile-item">Home</a>
+        <a href="#title" class="nav__mobile-item">Nowości</a>
+        <a href="#contact" class="nav__mobile-item">Kontakt</a>
 
       </div>
 
       <div class="nav__search">
-        <div class="input"><input type="search"></div>
+
+        <div class="nav__search-box">
+          <input type="text" class="search-box" placeholder="Wpisz szukany film...">
+          <span class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+        </div>
+        <button class="search">szukaj</button>
+
       </div>
 
       <div class="nav__navbar">
@@ -49,6 +57,8 @@
       </div>
     </nav>
 
+
+
     <div class="header__container">
       <div class="header__title">
         <h1>Shazam! Gniew bogów</h1>
@@ -63,6 +73,32 @@
       <button class="read__more">CZYTAJ WIĘCEJ <i class="fa-solid fa-circle-chevron-right"></i></button>
     </div>
 
+    <div class="movie__content">
+      <div class="movie__content-btn">
+        <i class="fa-solid fa-circle-chevron-down"></i>
+      </div>
+      <div class="movie__content-img"></div>
+      <div class="movie__content-box">
+        <img class="movie-poster" src="https://image.tmdb.org/t/p/w342/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg"
+          alt="alt musi być">
+
+        <div class="movie-text">
+          <h2 class="movie-title">Title 1234 1234 1234 </h2>
+          <p class="movie-genre">Akcja | Reakcja | Trzeci</p>
+          <p><i class="fa-solid fa-star"></i><span class="rating">8.5</span></p>
+          <p class="release-date">Data premiery: <span>2023-04-05</span></p>
+          <p class="original-title">"Shazaam! Original title."</p>
+        </div>
+      </div>
+      <div class="movie__content-description">
+
+        
+
+        <p>"Cztery lata po rozwiązaniu swojej pierwszej zagadki kryminalnej Nick i Audrey Spitzowie (Adam Sandler, Jennifer Aniston) wracają jako pełnoetatowi detektywi starający się rozkręcić własną agencję. Właśnie wtedy otrzymują zaproszenie na wesele przyjaciela, Maharadży (Adeel Akhtar), które odbędzie się na należącej do niego wyspie. Gdy pan młody zostaje porwany dla okupu wkrótce po rozpoczęciu uroczystości, kolejny raz potwierdza się, że kłopoty to specjalność tej dwójki. Każdy z wyjątkowych gości jest podejrzany – zarówno członkowie rodziny, jak i panna młoda. Nick i Audrey dostają wreszcie to o czym marzyli: sprawę najwyższej rangi i szansę na sukces zapewniający rozgłos ich agencji. Kolejny plus całej sprawy to… podróż do Paryża, o której obydwoje od dawna marzyli."</p>
+        
+      </div>
+
+    </div>
 
   </header>
 
@@ -74,7 +110,7 @@
 
     <div class="main__movies">
 
-      <div class="movie__item">
+      <div class="movie__item" id="0">
         <div class="movie__item-img">
           <img src="https://image.tmdb.org/t/p/w342/dLHr6H7r4vCXvCCLNgBYt70HD2f.jpg" alt="">
         </div>
@@ -91,7 +127,7 @@
 
 
 
-      <div class="movie__item">
+      <div class="movie__item" id="1">
         <div class="movie__item-img">
           <img src="https://image.tmdb.org/t/p/w342/Ajs7ZyNjGMHIiATMygxMkOFeTko.jpg" alt="">
         </div>
@@ -179,6 +215,7 @@
       </div>
 
     </div>
+
 
 
   </main>
