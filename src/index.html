@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" type="images/svg+xml" href="./vite.svg" />
+  <link rel="icon" type="images/svg+xml" href="./icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@300;400;600;700;800;900&display=swap"
@@ -14,18 +14,15 @@
   <title>MOVIE APP</title>
 </head>
 
-<body>
+<body class="scroll--simple">
 
   <header class="header">
 
     <nav class="nav">
-
-      <div class="nav__mobile">
-
-        <a href="#" class="nav__mobile-item slice">Home</a>
-        <a href="#title" class="nav__mobile-item news-link">Nowości</a>
-        <a href="#contact" class="nav__mobile-item">Kontakt</a>
-
+      <div class="nav__box">
+        <a href="#" class="nav__box-item">Home</a>
+        <a href="#title" class="nav__box-item news-link">Nowości</a>
+        <a href="#contact" class="nav__box-item">Kontakt</a>
       </div>
 
       <div class="nav__search">
@@ -43,10 +40,9 @@
       <div class="nav__navbar">
         <div class="nav__logo">
           <a href="#">
-            <img src="./images/logo.png" alt="">
+            <img src="./images/logo.png" alt="Logo MovieAPP">
           </a>
         </div>
-        <div class="nav__desktop"></div>
 
         <div class="nav__btns">
           <button class="nav__search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -56,7 +52,9 @@
             </span>
           </button>
         </div>
+
       </div>
+
     </nav>
 
     <div class="header__container">
@@ -72,14 +70,23 @@
       <button class="read__more">CZYTAJ WIĘCEJ <i class="fa-solid fa-circle-chevron-right"></i></button>
     </div>
 
+    <div class="header__arrow">
+      <a href="#title">
+        <div class="header__arrow-span">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+    </div>
+
     <div class="movie__content">
       <div class="movie__content-btn">
         <i class="fa-solid fa-circle-chevron-down"></i>
       </div>
       <div class="movie__content-img"></div>
       <div class="movie__content-box">
-        <img class="movie-poster" src="https://image.tmdb.org/t/p/w342/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg"
-          alt="alt musi być">
+        <img class="movie-poster" src="" alt="">
 
         <div class="movie-text">
           <h2 class="movie-title"></h2>
@@ -92,23 +99,18 @@
       <div class="movie__content-description">
         <p></p>
       </div>
-
     </div>
 
   </header>
 
   <main class="main">
-
     <div id="title" class="main__title title">
       <h2>Nowości filmowe</h2>
     </div>
-
     <div class="main__movies"></div>
-
   </main>
 
   <footer class="footer">
-
     <div id="contact" class="contact title">
       <h2>Kontakt</h2>
     </div>
@@ -120,8 +122,9 @@
     </nav>
 
     <div class="footer__text">
-      <p>© 2023 STREAMIT. Wszelkie prawa zastrzeżone. Wszystkie filmy i programy na tej platformie są znakami
-        towarowymi, a wszystkie powiązane z nimi obrazy i treści są własnością Streamit Inc. Duplikacja i kopiowanie
+      <p>© <span class="current-year"></span> MOVIE APP. Wszelkie prawa zastrzeżone. Wszystkie filmy na tej platformie
+        są znakami
+        towarowymi, a wszystkie powiązane z nimi obrazy i treści są własnością themoviedb.org. Duplikacja i kopiowanie
         jest surowo zabronione. Wszystkie prawa zastrzeżone.</p>
     </div>
 
@@ -132,7 +135,6 @@
       <a href="mailto:puczko.andrzej@gmail.com"><i class="fa-solid fa-envelope"></i></a>
 
     </div>
-
   </footer>
 
   <script type="module" src="./ts/main.ts" defer></script>
