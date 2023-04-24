@@ -3,21 +3,22 @@ import { genreLabels } from './labels'
 import { Movie, MovieData } from './types'
 
 const navBtn = document.querySelector('.hamburger') as HTMLButtonElement
-const navMobile = document.querySelector('.nav__mobile') as HTMLMenuElement
-const navMobileLinks = document.querySelectorAll('.nav__mobile-item')
+const nav = document.querySelector('.nav__box') as HTMLMenuElement
+const navLinks = document.querySelectorAll('.nav__box-item')
 const searchBtn = document.querySelector('.nav__search-btn') as HTMLButtonElement
-const searchNav = document.querySelector('.nav__search') as HTMLButtonElement
+const searchNav = document.querySelector('.nav__search') as HTMLDivElement
 const newsLink = document.querySelector('.news-link') as HTMLMenuElement
+const navLogo = document.querySelector('.nav__logo') as HTMLDivElement
 
 const header = document.querySelector('.header') as HTMLElement
 const headerContainer = document.querySelector('.header__container') as HTMLElement
-const headerTitle = document.querySelector('.header__title h1') as HTMLElement
-const headerRating = document.querySelector('.header__rating p span') as HTMLElement
-const headerText = document.querySelector('.header__description p') as HTMLElement
+const headerTitle = document.querySelector('.header__title h1') as HTMLHeadingElement
+const headerRating = document.querySelector('.header__rating p span') as HTMLSpanElement
+const headerText = document.querySelector('.header__description p') as HTMLParagraphElement
 const readMore = document.querySelector('.read__more') as HTMLButtonElement
 
 const main = document.querySelector('.main') as HTMLDivElement
-const mainTitle = document.querySelector('.main__title h2') as HTMLHeadElement
+const mainTitle = document.querySelector('.main__title h2') as HTMLHeadingElement
 const mainMovies = document.querySelector('.main__movies') as HTMLDivElement
 const movieContent = document.querySelector('.movie__content') as HTMLDivElement
 const movieContentBtn = document.querySelector('.movie__content-btn') as HTMLDivElement
@@ -32,6 +33,7 @@ const movieContentOverview = document.querySelector('.movie__content-description
 
 const searchInput = document.querySelector('.search-box') as HTMLInputElement
 const search = document.querySelector('.search') as HTMLButtonElement
+const footerYear = document.querySelector('.current-year') as HTMLSpanElement
 
 const API_KEY = '34f4ec51c1e003e1390c3950c553afc7'
 const randomMovie = Math.floor(Math.random() * 20)
@@ -41,7 +43,9 @@ let searchResult: string
 let headerImgWidth: string
 let movies: Movie[]
 
-function checkScreenWidth() {
+footerYear.textContent = currentYear.toString()
+
+const checkScreenWidth = () => {
 	if (window.innerWidth > 780) {
 		headerImgWidth = 'original'
 	} else {
@@ -75,7 +79,7 @@ async function headerLoading() {
 }
 headerLoading()
 
-function categoryConversion(movieId: number) {
+const categoryConversion = (movieId: number) => {
 	let genreArr: number[] = movies[movieId].genre_ids.slice(0, 3)
 	let genre = ''
 	for (const genreId of genreArr) {
@@ -120,6 +124,7 @@ async function openMovieContent(id: number) {
 
 	movieContentHeader.style.backgroundImage = `url("https://image.tmdb.org/t/p/${headerImgWidth}/${movies[id].backdrop_path}")`
 	movieContentPoster.setAttribute('src', `https://image.tmdb.org/t/p/w342/${movies[id].poster_path}`)
+	movieContentPoster.setAttribute('alt', `${movies[id].title}`)
 	movieContentTitle.textContent = movies[id].title
 	movieContentRating.textContent = movies[id].vote_average.toString()
 	movieContentRelease.textContent = movies[id].release_date
@@ -130,7 +135,7 @@ async function openMovieContent(id: number) {
 	document.body.classList.add('disable-scroll')
 }
 
-function findYourMovie() {
+const findYourMovie = () => {
 	if (searchInput.value !== '') {
 		searchNav.classList.remove('--active')
 		navBtn.classList.remove('is-active')
@@ -160,13 +165,21 @@ const closeMovieContentByDrag = () => {
 	})
 }
 
+const goToDefaultState = () => {
+	main.classList.remove('--search-result')
+	mainTitle.textContent = 'NOWOŚCI FILMOWE'
+	header.style.height = ''
+	headerContainer.style.display = 'flex'
+	contentLoading()
+}
+
 navBtn.addEventListener('click', () => {
 	if (searchNav.classList.contains('--active')) {
 		searchNav.classList.remove('--active')
 		navBtn.classList.remove('is-active')
 		document.body.classList.remove('disable-scroll')
 	} else {
-		navMobile.classList.toggle('--active')
+		nav.classList.toggle('--active')
 		navBtn.classList.toggle('is-active')
 		document.body.classList.toggle('disable-scroll')
 	}
@@ -197,20 +210,15 @@ searchInput.addEventListener('keypress', ({ key }) => {
 	}
 })
 
-navMobileLinks.forEach(item => {
+navLinks.forEach(item => {
 	item.addEventListener('click', () => {
 		document.body.classList.remove('disable-scroll')
-		navMobile.classList.remove('--active')
+		nav.classList.remove('--active')
 		navBtn.classList.remove('is-active')
 	})
 })
-
-newsLink.addEventListener('click', () => {
-	main.classList.remove('--search-result')
-	mainTitle.textContent = 'NOWOŚCI FILMOWE'
-	header.style.height = ''
-	headerContainer.style.display = 'flex'
-	contentLoading()
+;[newsLink, navLogo].forEach(item => {
+	item.addEventListener('click', goToDefaultState)
 })
 
 movieContentHeader.addEventListener('touchstart', closeMovieContentByDrag)
