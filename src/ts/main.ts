@@ -139,8 +139,8 @@ const findYourMovie = () => {
 	if (searchInput.value !== '') {
 		searchNav.classList.remove('--active')
 		navBtn.classList.remove('is-active')
-		document.body.classList.remove('disable-scroll')
 		main.classList.add('--search-result')
+		document.body.classList.remove('disable-scroll')
 		mainTitle.textContent = searchInput.value
 		header.style.height = '60px'
 		headerContainer.style.display = 'none'
@@ -217,9 +217,7 @@ navLinks.forEach(item => {
 		navBtn.classList.remove('is-active')
 	})
 })
-;[newsLink, navLogo].forEach(item => {
-	item.addEventListener('click', goToDefaultState)
-})
+;[newsLink, navLogo].forEach(item => item.addEventListener('click', goToDefaultState))
 
 movieContentHeader.addEventListener('touchstart', closeMovieContentByDrag)
 
