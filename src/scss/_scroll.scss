@@ -1,0 +1,25 @@
+.scroll {
+	display: inline-block;
+	width: 40px;
+	height: 300px;
+	overflow-y: scroll;
+
+	&--simple::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+	&--simple::-webkit-scrollbar-track {
+		background: rgba(255, 255, 255, 0.1);
+		border-radius: 10px;
+	}
+	&--simple::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 10px;
+	}
+	&--simple::-webkit-scrollbar-thumb:hover {
+		background: rgba(255, 0, 0, 0.4);
+	}
+	&--simple::-webkit-scrollbar-thumb:active {
+		background: rgba(255, 0, 0, 0.5);
+	}
+}
