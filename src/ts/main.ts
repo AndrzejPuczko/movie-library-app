@@ -157,7 +157,7 @@ const closeMovieContentByDrag = () => {
 		const currentY = touches[0].clientY
 
 		if (currentY > startY) {
-			movieContent.style.transform = 'translateY(100%)'
+			movieContent.style.transform = 'translateY(150%)'
 			setTimeout(() => {
 				document.body.classList.remove('disable-scroll')
 			}, 300)
@@ -198,7 +198,7 @@ mainMovies.addEventListener('click', ({ target }: MouseEvent) => {
 })
 
 movieContentBtn.addEventListener('click', () => {
-	movieContent.style.transform = 'translateY(100%)'
+	movieContent.style.transform = 'translateY(150%)'
 	document.body.classList.remove('disable-scroll')
 })
 

@@ -117,11 +117,11 @@ body {
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 100vh;
+		height: 150vh;
 		background-color: #141414e3;
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
-		transform: translateY(100%);
+		transform: translateY(150%);
 		transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 		overflow: hidden;
 		z-index: 100;
