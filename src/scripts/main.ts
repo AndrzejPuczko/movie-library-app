@@ -1,6 +1,9 @@
 import './../styles/style.scss'
+import './footer.ts'
 import { genreLabels } from './labels'
 import { Movie, MovieData } from './types'
+
+import { currentYear } from './footer'
 
 const navBtn = document.querySelector('.hamburger') as HTMLButtonElement
 const nav = document.querySelector('.nav__box') as HTMLMenuElement
@@ -33,17 +36,13 @@ const movieContentOverview = document.querySelector('.movie__content-description
 
 const searchInput = document.querySelector('.search-box') as HTMLInputElement
 const search = document.querySelector('.search') as HTMLButtonElement
-const footerYear = document.querySelector('.current-year') as HTMLSpanElement
 
 const API_KEY = '34f4ec51c1e003e1390c3950c553afc7'
 const randomMovie = Math.floor(Math.random() * 20)
-const currentYear = new Date().getFullYear()
 
 let searchResult: string
 let headerImgWidth: string
 let movies: Movie[]
-
-footerYear.textContent = currentYear.toString()
 
 const checkScreenWidth = () => {
 	if (window.innerWidth > 780) {
