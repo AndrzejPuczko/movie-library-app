@@ -1,4 +1,4 @@
-import './../scss/style.scss'
+import './../styles/style.scss'
 import { genreLabels } from './labels'
 import { Movie, MovieData } from './types'
 
