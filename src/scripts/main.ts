@@ -13,13 +13,6 @@ const searchNav = document.querySelector('.nav__search') as HTMLDivElement
 const newsLink = document.querySelector('.news-link') as HTMLMenuElement
 const navLogo = document.querySelector('.nav__logo') as HTMLDivElement
 
-const header = document.querySelector('.header') as HTMLElement
-const headerContainer = document.querySelector('.header__container') as HTMLElement
-const headerTitle = document.querySelector('.header__title h1') as HTMLHeadingElement
-const headerRating = document.querySelector('.header__rating p span') as HTMLSpanElement
-const headerText = document.querySelector('.header__description p') as HTMLParagraphElement
-const readMore = document.querySelector('.read__more') as HTMLButtonElement
-
 const main = document.querySelector('.main') as HTMLDivElement
 const mainTitle = document.querySelector('.main__title h2') as HTMLHeadingElement
 const mainMovies = document.querySelector('.main__movies') as HTMLDivElement
