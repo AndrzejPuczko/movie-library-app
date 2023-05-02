@@ -9,6 +9,6 @@ class Footer {
 	}
 }
 
-export const footer = new Footer()
+const footer = new Footer()
 export const currentYear = footer.getCurrentYear()
 footer.addYearToFooter()
