@@ -13,7 +13,9 @@ class Header {
 	headerRating = document.querySelector<HTMLSpanElement>('.header__rating p span')!
 	headerText = document.querySelector<HTMLParagraphElement>('.header__description p')!
 	readMore = document.querySelector<HTMLButtonElement>('.read__more')!
-	imageSize = ''
+	apiImgDesktopSize = 'original'
+	apiImgMobileSize = 'w780'
+	apiImgSize = ''
 
 	getMovies = async () => {
 		const response = await fetch(
@@ -26,7 +28,7 @@ class Header {
 	getHeaderBackground = async () => {
 		const movies = await this.getMovies()
 		const linearGradient = 'linear-gradient(to right, rgba(0, 0, 0, 0.829) 20%, rgba(0, 0, 0, 0) 110%)'
-		this.headerArea.style.backgroundImage = `${linearGradient}, url("https://image.tmdb.org/t/p/${this.imageSize}/${movies[randomMovie].backdrop_path}")`
+		this.headerArea.style.backgroundImage = `${linearGradient}, url("https://image.tmdb.org/t/p/${this.apiImgSize}/${movies[randomMovie].backdrop_path}")`
 	}
 
 	getHeaderDescription = async () => {
@@ -38,9 +40,9 @@ class Header {
 
 	getScreenInnerWidth = () => {
 		if (window.innerWidth > 780) {
-			this.imageSize = 'original'
+			this.apiImgSize = this.apiImgDesktopSize
 		} else {
-			this.imageSize = 'w780'
+			this.apiImgSize = this.apiImgMobileSize
 		}
 		this.getHeaderBackground()
 	}
