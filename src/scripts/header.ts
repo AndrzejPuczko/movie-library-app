@@ -1,6 +1,8 @@
 import { MovieData } from './types'
 import { currentYear } from './footer'
+import { API_KEY } from './main'
 import { openMovieContent } from './main'
+
 
 const apiArrayLength = 20
 export const randomMovie = Math.floor(Math.random() * apiArrayLength)
@@ -15,7 +17,7 @@ class Header {
 
 	getMovies = async () => {
 		const response = await fetch(
-			`https://api.themoviedb.org/3/discover/movie?api_key=34f4ec51c1e003e1390c3950c553afc7&language=pl-PL&sort_by=popularity.desc&page=1&year=${currentYear}&with_watch_monetization_types=flatrate`
+			`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=pl-PL&sort_by=popularity.desc&page=1&year=${currentYear}&with_watch_monetization_types=flatrate`
 		)
 		const jsonData: MovieData = await response.json()
 		return jsonData.results
@@ -44,4 +46,3 @@ const readMore = header.openHeaderMoreInfo
 header.getHeaderBackground()
 header.getHeaderDescription()
 header.readMore.addEventListener('click', readMore)
-
