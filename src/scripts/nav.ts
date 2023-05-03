@@ -29,12 +29,19 @@ class Nav {
 		this.navBtn.classList.toggle('is-active')
 		document.body.classList.toggle('disable-scroll')
 	}
+	closeSearchMobile = () => {
+        this.searchNav.classList.remove('--active')
+		this.navBtn.classList.remove('is-active')
+		document.body.classList.remove('disable-scroll')
+		
+    }
 }
 
 const nav = new Nav()
 const openMobileNav = nav.openMobileNav
 const closeMobileNav = nav.closeMobileNav
 const openSearchMobile = nav.openSearchMobile
+export const closeSearchMobile = nav.closeSearchMobile
 
 nav.navBtn.addEventListener('click', openMobileNav)
 nav.searchBtn.addEventListener('click', openSearchMobile)
