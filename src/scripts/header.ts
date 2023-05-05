@@ -1,10 +1,9 @@
 import { MovieData } from './types'
 import { currentYear } from './footer'
-import { API_KEY } from './main'
-import { openMovieContent } from './main'
 
+const API_KEY = process.env.API_KEY
 const apiArrayLength = 20
-export const randomMovie = Math.floor(Math.random() * apiArrayLength)
+const randomMovie = Math.floor(Math.random() * apiArrayLength)
 
 class Header {
 	headerArea = document.querySelector<HTMLElement>('.header')!
@@ -12,7 +11,6 @@ class Header {
 	headerTitle = document.querySelector<HTMLHeadingElement>('.header__title h1')!
 	headerRating = document.querySelector<HTMLSpanElement>('.header__rating p span')!
 	headerText = document.querySelector<HTMLParagraphElement>('.header__description p')!
-	readMore = document.querySelector<HTMLButtonElement>('.read__more')!
 	apiImgDesktopSize = 'original'
 	apiImgMobileSize = 'w780'
 	apiImgSize = ''
@@ -47,18 +45,16 @@ class Header {
 		this.getHeaderBackground()
 	}
 
-	openHeaderMoreInfo = async () => {
-		await openMovieContent(randomMovie)
+	hideHeaderContainer = () => {
+		this.headerArea.style.height = '60px'
+		this.headerContainer.style.display = 'none'
 	}
 }
 
-export const header = new Header()
-const readMore = header.openHeaderMoreInfo
-const getScreenInnerWidth = header.getScreenInnerWidth
-
-header.getHeaderBackground()
-header.getHeaderDescription()
+const header = new Header()
 header.getScreenInnerWidth()
+header.getHeaderDescription()
 
-header.readMore.addEventListener('click', readMore)
-window.addEventListener('resize', getScreenInnerWidth)
+window.addEventListener('resize', header.getScreenInnerWidth)
+
+export { API_KEY, randomMovie, header }
