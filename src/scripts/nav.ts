@@ -4,8 +4,6 @@ class Nav {
 	navLinks = document.querySelectorAll<HTMLMenuElement>('.nav__box-item')!
 	searchBtn = document.querySelector<HTMLButtonElement>('.nav__search-btn')!
 	searchNav = document.querySelector<HTMLDivElement>('.nav__search')!
-	newsLink = document.querySelector<HTMLMenuElement>('.news-link')!
-	navLogo = document.querySelector<HTMLMenuElement>('.nav__logo')!
 
 	openMobileNav = () => {
 		if (this.searchNav.classList.contains('--active')) {
