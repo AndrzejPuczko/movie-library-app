@@ -3,10 +3,12 @@ import './header'
 import './nav'
 import './search'
 import './footer'
+import './trailer'
 import { genreLabels } from './labels'
 import { Movie } from './types'
 import { header, randomMovie } from './header'
 import { search } from './search'
+import { trailer } from './trailer'
 
 let movies: Movie[]
 
@@ -26,6 +28,9 @@ class Main {
 	readMore = document.querySelector<HTMLButtonElement>('.read__more')!
 	newsLink = document.querySelector<HTMLMenuElement>('.news-link')!
 	navLogo = document.querySelector<HTMLMenuElement>('.nav__logo')!
+	videoBtn = document.querySelector<HTMLButtonElement>('.video-button')!
+	closeBtn = document.querySelector<HTMLButtonElement>('.close-button')!
+	 
 
 	getMovieNews = async () => {
 		movies = await header.getMovies()
@@ -108,6 +113,11 @@ class Main {
 		const movie = target as HTMLElement
 		const movieId = Number(movie.id)
 		main.openMoreInfoModule(movieId)
+		this.getMovieIdForTrailer(movieId)
+	}
+
+	getMovieIdForTrailer = (id: number) => {
+		trailer.movieId = movies[id].id.toString()
 	}
 
 	convertIdToCategory = (movieId: number) => {
@@ -132,15 +142,18 @@ class Main {
 const main = new Main()
 main.getMovieNews()
 
-search.searchBtn.addEventListener('click', main.getFoundMovies)
 main.newsLink.addEventListener('click', main.returnToDefaultState)
 main.navLogo.addEventListener('click', main.returnToDefaultState)
 main.moviesContainer.addEventListener('click', main.checkMovieId)
 main.movieContentBtn.addEventListener('click', main.closeModule)
 main.movieContentHeader.addEventListener('touchstart', main.closeModuleByDrag)
 main.readMore.addEventListener('click', () => main.openMoreInfoModule(randomMovie))
+main.videoBtn.addEventListener('click', () => trailer.openVideoModule(trailer.movieId))
+main.closeBtn.addEventListener('click', trailer.closeVideoModule)
+search.searchBtn.addEventListener('click', main.getFoundMovies)
 search.searchInput.addEventListener('keypress', ({ key }) => {
 	if (key === 'Enter') {
 		main.getFoundMovies()
 	}
 })
+
