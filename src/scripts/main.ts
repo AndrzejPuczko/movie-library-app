@@ -30,7 +30,6 @@ class Main {
 	navLogo = document.querySelector<HTMLMenuElement>('.nav__logo')!
 	videoBtn = document.querySelector<HTMLButtonElement>('.video-button')!
 	closeBtn = document.querySelector<HTMLButtonElement>('.close-button')!
-	 
 
 	getMovieNews = async () => {
 		movies = await header.getMovies()
@@ -49,6 +48,7 @@ class Main {
 	openMoreInfoModule = (id: number) => {
 		this.setImagesToModule(id)
 		this.addTextsToModule(id)
+		this.getMovieIdForTrailer(id)
 		this.openModule()
 	}
 
@@ -113,7 +113,6 @@ class Main {
 		const movie = target as HTMLElement
 		const movieId = Number(movie.id)
 		main.openMoreInfoModule(movieId)
-		this.getMovieIdForTrailer(movieId)
 	}
 
 	getMovieIdForTrailer = (id: number) => {
@@ -156,4 +155,3 @@ search.searchInput.addEventListener('keypress', ({ key }) => {
 		main.getFoundMovies()
 	}
 })
-
