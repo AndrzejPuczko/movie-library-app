@@ -37,7 +37,6 @@ body {
 	position: relative;
 	width: 100%;
 	height: 60vh;
-	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.829) 20%, rgba(0, 0, 0, 0) 110%), url('https://image.tmdb.org/t/p/original/wybmSmviUXxlBmX44gtpow5Y9TB.jpg');
 	background-size: cover;
 	background-position: center;
 
@@ -66,7 +65,7 @@ body {
 
 		h1 {
 			color: transparent;
-			background-image: url('https://wordpress.iqonic.design/product/wp/streamit/wp-content/themes/streamit-theme/assets/images/redux/texure.jpg');
+			background-image: url('./../assets/texure.jpg');
 			background-clip: text;
 			-webkit-background-clip: text;
 			font-size: 2.1rem;
@@ -139,7 +138,6 @@ body {
 			position: relative;
 			width: 100%;
 			height: 40vh;
-			background-image: url('https://image.tmdb.org/t/p/original/h8gHn0OzBoaefsYseUByqsmEDMY.jpg');
 			background-size: cover;
 			background-position: center;
 
