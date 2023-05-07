@@ -42,4 +42,7 @@ class Trailer {
 	}
 }
 
-export const trailer = new Trailer()
+const trailer = new Trailer()
+trailer.videoModule.addEventListener('click', trailer.closeVideoModule)
+
+export { trailer }
