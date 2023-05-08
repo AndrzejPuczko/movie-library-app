@@ -56,8 +56,8 @@ body {
 		justify-content: center;
 		width: 90%;
 		height: 60vh;
-		padding-left: 2rem;
-		gap: 1rem;
+		padding-left: 20px;
+		gap: 10px;
 	}
 	&__title {
 		text-transform: uppercase;
@@ -92,7 +92,7 @@ body {
 		line-height: 1.5;
 	}
 	.read__more {
-		padding: 1.3rem;
+		padding: 13px;
 		width: 200px;
 		color: $white;
 		background: $red;
@@ -127,7 +127,7 @@ body {
 
 		&-btn {
 			position: absolute;
-			padding: 1.5rem;
+			padding: 15px;
 			color: #e6e6e6;
 			font-size: 3.6rem;
 			z-index: 10;
@@ -154,7 +154,7 @@ body {
 		&-box {
 			display: flex;
 			width: 100%;
-			padding: 1.5rem 1rem;
+			padding: 15px 10px;
 
 			.movie-poster {
 				position: relative;
@@ -165,7 +165,7 @@ body {
 			}
 
 			.movie-text {
-				padding: 0.8rem 0 0 2rem;
+				padding: 8px 0 0 20px;
 				font-size: 1.6rem;
 
 				.movie-title {
@@ -184,7 +184,7 @@ body {
 					}
 				}
 				.movie-genre {
-					padding: 0.4rem 0;
+					padding: 4px 0;
 					color: $red;
 					background-image: -webkit-linear-gradient(0deg, #ff4646 0%, #d5030e 100%);
 					-webkit-background-clip: text;
@@ -199,7 +199,7 @@ body {
 				}
 				.release-date,
 				.original-title {
-					padding: 0.3rem 0;
+					padding: 3px 0;
 					font-size: 1.4rem;
 					span {
 						font-weight: 600;
@@ -227,7 +227,7 @@ body {
 			width: 100%;
 			height: 150px;
 			top: -40px;
-			padding: 0 1.5rem;
+			padding: 0 15px;
 			font-size: 1.4rem;
 			font-weight: 300;
 			line-height: 2.2rem;
@@ -328,7 +328,7 @@ body {
 		z-index: 1;
 
 		&-item {
-			padding: 2rem;
+			padding: 20px;
 			color: $white;
 			font-size: 3.5rem;
 			line-height: 3rem;
@@ -358,6 +358,14 @@ body {
 					font-size: 1.4rem;
 				}
 			}
+
+			.search-box.error {
+				&::placeholder {
+					color:rgba(251, 255, 0, 0.993);
+				}
+			}
+
+			
 
 			.search-icon {
 				position: relative;
@@ -397,14 +405,14 @@ body {
 
 		.nav__logo img {
 			height: 45px;
-			padding: 0 1.5rem;
+			padding: 0 15px;
 		}
 
 		.nav__btns {
 			.nav__search-btn {
 				position: relative;
 				top: -1px;
-				padding: 1.8rem;
+				padding: 18px;
 				background: none;
 				border: none;
 				cursor: pointer;
@@ -425,18 +433,18 @@ body {
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	padding-top: 3rem;
+	padding-top: 30px;
 	overflow: hidden;
 
 	&__movies {
 		display: grid;
 		width: 100%;
-		padding: 1.5rem;
+		padding: 15px;
 		grid-template-columns: repeat(2, 1fr);
-		gap: 1.8rem;
+		gap: 18px;
 
 		.movie__item {
-			padding: 1rem 0;
+			padding: 10px 0;
 			cursor: pointer;
 
 			img {
@@ -446,7 +454,7 @@ body {
 
 			&-title {
 				margin-left: 5px;
-				padding: 1rem 0 0.3rem 0;
+				padding: 10px 0 3px 0;
 			}
 			&-genre {
 				margin-left: 5px;
@@ -483,14 +491,14 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 3rem 1rem;
+	padding: 30px 10px;
 	background: $footer-bg;
 
 	&__nav {
-		padding: 2rem 0;
+		padding: 20px 0;
 
 		a {
-			padding: 0 1rem;
+			padding: 0 10px;
 			color: $white;
 			text-decoration: none;
 			transition: color 0.3s;
@@ -501,18 +509,18 @@ body {
 	}
 
 	&__text {
-		padding: 1rem 2rem;
+		padding: 10px 20px;
 		font-size: 1.3rem;
 		font-weight: 100;
 		text-align: center;
 	}
 
 	&__social {
-		padding-top: 2.5rem;
+		padding-top: 25px;
 		font-size: 2.2rem;
 
 		i {
-			padding: 1.4rem 1.4rem;
+			padding: 14px 14px;
 			background: #252525;
 			border-radius: 50%;
 		}
@@ -535,7 +543,7 @@ body {
 		width: 5px;
 		height: 40px;
 		top: -8px;
-		left: -1.5rem;
+		left: -15px;
 		background-color: $red;
 		border-radius: 2px;
 	}
@@ -554,7 +562,7 @@ body {
 
 @media (min-width: 650px) {
 	.nav .nav__box-item {
-		padding: 3rem;
+		padding: 30px;
 		font-size: 4rem;
 	}
 	.header {
@@ -568,14 +576,14 @@ body {
 		}
 		&__description {
 			max-width: 450px;
-			padding: 1rem 0;
+			padding: 10px 0;
 		}
 		.movie__content {
 			&-box {
-				padding: 1.5rem 2rem;
+				padding: 15px 20px;
 
 				.movie-text {
-					padding-left: 3rem;
+					padding-left: 30px;
 					.movie-title {
 						font-size: 2.5rem;
 						&::before {
@@ -583,7 +591,7 @@ body {
 						}
 					}
 					.movie-genre {
-						padding: 0.6rem 0;
+						padding: 6px 0;
 						font-size: 1.6rem;
 					}
 					.release-date {
@@ -607,7 +615,7 @@ body {
 			&-description {
 				height: 250px;
 				top: -70px;
-				padding: 0 2rem;
+				padding: 0 20px;
 				font-size: 1.6rem;
 			}
 
@@ -645,10 +653,10 @@ body {
 			&-box {
 				max-width: 1100px;
 				margin: 0 auto;
-				padding: 1.5rem 4rem;
+				padding: 15px 40px;
 
 				.movie-text {
-					padding-left: 4rem;
+					padding-left: 40px;
 					font-size: 2rem;
 					.movie-title {
 						font-size: 2.8rem;
@@ -658,7 +666,7 @@ body {
 						}
 					}
 					.movie-genre {
-						padding: 0.6rem 0;
+						padding: 6px 0;
 					}
 				}
 				.movie-poster {
@@ -670,7 +678,7 @@ body {
 				max-width: 1100px;
 				top: -100px;
 				margin: 0 auto;
-				padding: 0 3rem;
+				padding: 0 30px;
 			}
 
 			&-img {
@@ -696,7 +704,7 @@ body {
 	}
 
 	.title {
-		padding: 1rem 0;
+		padding: 10px 0;
 		h2 {
 			font-size: 2.5rem;
 		}
@@ -719,7 +727,7 @@ body {
 		height: 100vh;
 		&__container {
 			height: 100vh;
-			padding: 0 4rem;
+			padding: 0 40px;
 		}
 		&__title h1 {
 			max-width: 900px;
