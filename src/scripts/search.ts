@@ -30,6 +30,17 @@ class Search {
 		this.setSearchEngineToDefault()
 		closeSearchMobile()
 	}
+
+	showErrorMessage = () => {
+		this.searchInput.value = ''
+		this.searchInput.setAttribute('placeholder', 'Błąd, proszę wpisać nazwę filmu')
+		this.searchInput.classList.add('error')
+	}
+
+	clearErrorMessage = () => {
+		this.searchInput.setAttribute('placeholder', 'Wpisz szukany film')
+		this.searchInput.classList.remove('error')
+	}
 }
 
 export const search = new Search()
