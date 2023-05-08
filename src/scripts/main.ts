@@ -1,9 +1,7 @@
 import './../styles/style.scss'
 import './header'
 import './nav'
-import './search'
 import './footer'
-import './trailer'
 import { genreLabels } from './labels'
 import { Movie } from './types'
 import { header, randomMovie } from './header'
@@ -37,11 +35,16 @@ class Main {
 	}
 
 	getFoundMovies = async () => {
-		movies = await search.getSearchMovies()
-		search.showFoundMovies()
-		main.addMoviesToContainer()
-		if (movies.length === 0) {
-			this.title.textContent = 'Nie znaleziono szukanego filmu'
+		if (!search.searchInput.value.trim()) {
+			search.showErrorMessage()
+		} else {
+			movies = await search.getSearchMovies()
+			search.showFoundMovies()
+			search.clearErrorMessage()
+			main.addMoviesToContainer()
+			if (movies.length === 0) {
+				this.title.textContent = 'Nie znaleziono szukanego filmu'
+			}
 		}
 	}
 
@@ -155,7 +158,7 @@ search.searchInput.addEventListener('keypress', ({ key }) => {
 		main.getFoundMovies()
 	}
 })
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', event => {
 	if (event.key === 'Escape') {
 		main.closeModule()
 		trailer.closeVideoModule()
