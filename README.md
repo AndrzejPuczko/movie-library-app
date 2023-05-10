@@ -2,11 +2,11 @@
 
 <br />
 <div align="center">
-    <img src="./src/images/logo.png" alt="Logo" width="206" height="67">
+    <img src="./src/assets/logo.png" alt="Logo" width="206" height="67">
 
 <h2 align="center">Movie Library App</h2>
 <p>The project presents a movie library. After opening the application in the header section you can see the random movie from twenty new movies.</p><p>Under the header section there is a list of new films. The list contains the title, category and rating for each movie. After clicking on the movie  you can notice a section which contains more information. In the upper right corner there is a movie search engine and a menu.</p>
-<p>The application is not finish yet. In the section called  ‘more information’ I plan to add the cast and some trailers. The project was created for educational purposes. The main idea of my project is to learn TypeScript.</p>
+<p>The application is not finish yet. The project was created for educational purposes. The main idea of my project is to learn TypeScript.</p>
 <p>Enjoy</p>
 
   <p align="center">
