@@ -2,6 +2,7 @@ import './../styles/style.scss'
 import './header'
 import './nav'
 import './footer'
+import './stopPropagation'
 import { genreLabels } from './labels'
 import { Movie } from './types'
 import { header, randomMovie } from './header'
@@ -28,6 +29,7 @@ class Main {
 	navLogo = document.querySelector<HTMLMenuElement>('.nav__logo')!
 	videoBtn = document.querySelector<HTMLButtonElement>('.video-button')!
 	closeBtn = document.querySelector<HTMLButtonElement>('.close-button')!
+	contentBox = document.querySelector<HTMLDivElement>('.movie__content-box')!
 
 	getMovieNews = async () => {
 		movies = await header.getMovies()
@@ -163,4 +165,9 @@ document.addEventListener('keydown', event => {
 		main.closeModule()
 		trailer.closeVideoModule()
 	}
+})
+
+main.movieContent.addEventListener('click', e => {
+	e.stopPropagation()
+	main.closeModule()
 })
