@@ -2,6 +2,7 @@ import './../styles/style.scss'
 import './header'
 import './nav'
 import './footer'
+import './stopPropagation'
 import { genreLabels } from './labels'
 import { Movie } from './types'
 import { header, randomMovie } from './header'
@@ -149,6 +150,7 @@ main.navLogo.addEventListener('click', main.returnToDefaultState)
 main.moviesContainer.addEventListener('click', main.checkMovieId)
 main.movieContentBtn.addEventListener('click', main.closeModule)
 main.movieContentHeader.addEventListener('touchstart', main.closeModuleByDrag)
+main.movieContent.addEventListener('click', main.closeModule)
 main.readMore.addEventListener('click', () => main.openMoreInfoModule(randomMovie))
 main.videoBtn.addEventListener('click', () => trailer.openVideoModule(trailer.movieId))
 main.closeBtn.addEventListener('click', trailer.closeVideoModule)
