@@ -10,7 +10,7 @@
 <p>Enjoy</p>
 
   <p align="center">
-    <a href="https://movielibrary-application.netlify.app/">View Demo</a> · <a href="https://github.com/AndrzejPuczko/movie-library-app/issues">Report Bug</a>
+    <a href="https://webdevlab.pl/projects/movie-app/">View Demo</a> · <a href="https://github.com/AndrzejPuczko/movie-library-app/issues">Report Bug</a>
   </p>
 </div>
 
@@ -44,6 +44,6 @@ If you want to use this app just:
 
 Andrzej Puczko - [puczko.andrzej@gmail.com](mailto:puczko.andrzej@gmail.com)
 
-Project Link: [https://movielibrary-application.netlify.app](https://movielibrary-application.netlify.app)
+Project Link: [https://webdevlab.pl/projects/movie-app/](https://webdevlab.pl/projects/movie-app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
